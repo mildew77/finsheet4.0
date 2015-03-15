@@ -1,0 +1,34 @@
+#timePeriodInfo{
+font-family: 'Lato', sans-serif;
+padding:10px;
+
+}
+#startMonth{
+cursor:pointer;
+font-weight:bold;
+}
+#endMonth{
+cursor:pointer;
+font-weight:bold;
+}
+#custumReturns{
+font-family: 'Lato', sans-serif;
+padding-left:10px;
+
+}
+#covarianceUpdate{
+font-family: 'Lato', sans-serif;
+padding:10px;
+
+}
+#tablesHold{
+border-style:none;
+}
+
+#covHold{display:none;}
+#custCorrTable{display:none;}
+#covarianceCustom{
+
+font-family: 'Lato', sans-serif;
+padding:10px;
+}

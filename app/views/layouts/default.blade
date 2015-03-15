@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{{$title}}</title>
+
+
+
+	@yield('head')
+	</head>
+	<body>
+	<header>
+	<div id="logo"></div>
+	<div id="login"></div>
+	</header>
+	
+	<article>
+	@yield('menu')
+	
+	@yield('content')
+	</article>
+	<footer>
+	@yield('footer')
+	
+	</footer>	
+	
+	
+	</body>
+</html>

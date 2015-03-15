@@ -1,0 +1,46 @@
+input{
+
+width:100px;
+}
+
+#investmentPortfolio{
+
+display: -moz-inline-box;
+display: inline-block;
+float: left;
+padding-left:5%;
+padding-right:5%;
+padding-bottom:5%;
+
+}
+#housePortfolio{
+position:relative;
+
+display: -moz-inline-box;
+display: inline-block;
+
+}
+#paymentDetails{
+position:relative;
+padding-left:5%;
+display: -moz-inline-box;
+display: inline-block;
+}
+#liborGraph{
+display:none;
+width:1200px;
+height:400px;
+}
+#simGraph{
+width:1200px;
+height:400px;
+}
+#expenseLivingTd, #expenseInflation{
+cursor:pointer;
+}
+.remove{
+display:none;
+}
+#slider{
+width:60%;
+}

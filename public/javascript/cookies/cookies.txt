@@ -1,0 +1,36 @@
+//Below is set in howManyAssets.js if portfolio does not equal 100%
+$.cookie("sumPortfolio");
+
+
+//Below cookes are found in assumptions.js
+$.cookie("assets");
+$.cookie("message", "Please build portfolio below before setting assumptions");
+src = JSON.stringify(assumptions.currentReturns);
+		$.cookie("currentReturns", src);
+$.cookie("correlation", srcCorrelation);
+
+//Found in covariance.js
+$.cookie("customCorrelation"); true or false
+
+//Below cookes are found in customReturns.js
+//also found in graph.js
+$.cookie("customReturns"); true or false
+
+
+//how to set and call cookies that are objects
+
+src = JSON.stringify(assets);
+$.cookie("assets", src);
+temp = $.cookie("assets");
+nobj = $.secureEvalJSON(temp);
+
+//Below found in covariance.js
+temp = $.cookie("correlation");
+corrObj= $.secureEvalJSON(temp);
+//Below found in portfolioReturn.js
+$.cookie("initialInvestmentValue", initialInvestmentValue);
+$.cookie("portfolioReturn", portfolioReturn);
+$.cookie("portfolioStdev", portfolioStdev);
+//Below found in liborGraph.js for Reverse Mortgage Libor
+$.cookie("liborCurve", liborCurve);
+

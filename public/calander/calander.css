@@ -1,0 +1,32 @@
+.calander{
+background-color:white;
+}
+
+.calanderDropDown{
+
+padding-left:25%;
+font-size: 24px;
+width:100%;
+
+font-family: 'Lato', sans-serif;
+ border: 1px solid black;
+
+}
+
+.inactiveMonth{
+
+color:grey;
+
+}
+.activeMonth{
+cursor:pointer;
+
+}
+#calanderHold{
+
+position:absolute;
+top:50%;
+left:10%;
+
+}
+

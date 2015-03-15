@@ -1,0 +1,55 @@
+#waitHold{
+display:none;
+position:relative;
+left:40%;
+top:50px;
+}
+#initialInvest{
+width:80px;
+}
+
+#wait{
+	
+	position:relative;
+	left:50px;
+	width: 100px;
+	height: 100px;
+	background: #4b82f0;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	text-align: center;
+	color:white;
+	vertical-align: middle;
+	display: table-cell;
+	vertical-align: middle;
+	font-family: 'Lato', sans-serif;
+	font-size:20px;
+}
+#pleaseWait{
+	position:relative;
+	top:10px;
+	color:#4b82f0;
+	font-family: 'Lato', sans-serif;
+	width:250px;
+height:100px;
+}
+#barGraph{
+position:relative;
+top:20px;
+left:10%;
+width:900px;
+height:400px;
+margin-bottom:5%;
+}
+#varDescription{
+position:relative;
+padding-top:30px;
+padding-left:15%;
+color:#4b82f0;
+font-family: 'Lato', sans-serif;
+font-size: 18px;
+font-weight: bold;
+display:none;
+}
+

@@ -1,0 +1,44 @@
+*,
+*:before,
+*:after {
+    @include box-sizing(border-box);
+}
+  
+
+
+.rangeslider__value-bubble {
+  border: 1px solid #ccc;
+  display: block;
+  padding: 5px;
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: 25px;
+  width: 100px;
+  margin-left: -50px;
+  text-align: center;
+  @include border-radius(5px);
+  
+  &:before,
+  &:after {
+    border-width: 11px;
+    border-style: solid;
+    border-color: transparent;
+    content: "";
+    display: block;
+    margin: auto;
+    width: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;  
+  }
+  &:before {
+    border-top-color: #ccc;
+    border-bottom-width: 0;
+    bottom: -11px;
+  }
+  &:after {
+    border-top-color: #fff;
+    border-bottom-width: 0;
+    bottom: -10px;  
+  }
+}

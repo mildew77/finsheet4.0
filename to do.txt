@@ -1,0 +1,5 @@
+-Update Pi chart so that label is removed and custom label
+is added
+-Under portfolio composition force 100%
+-Check to see if you can default to correlation given on assumptions screen 
+-
