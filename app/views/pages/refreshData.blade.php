@@ -18,5 +18,6 @@
 @stop
 
 @section('scripts')
+{{HTML::script('javascript/assets.js')}}
 {{HTML::script('javascript/data/refresh.js')}}
 @stop

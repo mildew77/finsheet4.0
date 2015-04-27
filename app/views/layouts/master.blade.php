@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="finsheet">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>{{$title}}</title>
 
-{{HTML::script('javascript/jquery.js')}}
-{{HTML::script('javascript/cookies/jquery.cookie.js')}}
-{{HTML::script('javascript/cookies/jquery.json.js')}}
-{{HTML::script('javascript/velocity.js')}}
-{{HTML::script('javascript/assets.js')}}
-{{HTML::script('javascript/message.js')}}
+<!-- Main Frameworks	 -->
+    {{HTML::script('javascript/angular.js')}}
+    {{HTML::script('javascript/jquery.js')}}
+       
+<!-- Scripts used throughout application	 -->
 
+{{HTML::script('javascript/angular.cookie.js')}}
+{{HTML::script('javascript/hammer.js')}}
+{{HTML::script('javascript/angular.hammer.js')}}
+{{HTML::script('javascript/flot.js')}}
+{{HTML::script('javascript/flotPie.js')}}
+<!-- Styles shared throughout application	 -->
+
+{{HTML::style('css/bootstrap.css');}}
 {{HTML::style('css/default.css');}}
 {{HTML::style('css/menu.css');}}
+
+
 	@yield('head')
 	</head>
 	<body>

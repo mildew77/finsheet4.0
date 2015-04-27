@@ -1,31 +1,32 @@
 @extends('layouts.master')
 @section('head')
-{{HTML::style('css/portfolioComposition/assetCount.css');}}
-{{HTML::style('css/portfolioComposition/form.css');}}
-
+{{HTML::script('javascript/portfolio/app.js')}}
+{{HTML::style('css/portfolioComposition/style.css');}}
 @stop
 @section('content')
-
-<div id="numberOfAssets">
-<span id="howManyAssets">How many assets?</span><span id="assetNumber">0</span><span id="assetPercentSum">0%</span>
-<ul id="howManyAssetsUl">
-<li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li>
-<li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li><li>18</li><li>19</li><li>20</li><li>21</li>
-</ul>	
-	</div>
-<div id="formGraphContainer">
-
-
-<table id="compositionForm">
-</table>	
-<div id="compositionGraph"></div>
+<div ng-controller="MainCtrl">
+  
+  
+  
+  <div class="container portSumHold"><span class="text-right col-sm-6">Portfolio Sum </span><span><%sum%></span></div>
+  <div class="container-fluid hold" id="portfolioHold" hm-panmove="swipeRight">
+    <form class="form-horizontal" ng-repeat="asset in assets">
+      <div class="form-group">
+        <label for="inputEmail3" class="col-sm-6 control-label"><%asset.Description%></label>
+        <div class="col-sm-2">
+          <input class="form-control percentInput" data-ng-model="asset.Percent" ng-blur="summation()" percent-input>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div ng-controller="MainCtrl" class="container-fluid hold" id="graphHold" hm-panmove="swipeLeft" data-ng-init="updateGraph()">
+  <div id="chartLegend"></div>
+  <div id="plotDiv"></div>
+  
 </div>
 @stop
-
 @section('scripts')
-
-{{HTML::script('javascript/portfolio/howManyAssets.js')}}
-{{HTML::script('javascript/flotr2.min.js')}}
 {{HTML::script('javascript/portfolio/graph.js')}}
-
+{{HTML::script('javascript/portfolio/percentInput.js')}}
 @stop

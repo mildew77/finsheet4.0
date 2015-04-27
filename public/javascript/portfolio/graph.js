@@ -1,71 +1,94 @@
-function graph(){
-$.cookie("customReturns",false)
-$.cookie("customCorrelation",false)
-var percentArray=[];
-var assetCount=0;
-var graphData=[];
-var remainder = 100;
-var graphColors=[];
-var container;
-var percentColor=[];
-$('.assetPercent').each(function(){
-  percentArray.push((this.value.replace('%',''))/1);
-  })
-for(i=0;i<assets.length;i++){
-assets[i].percent=0;
-}
-$('.assetSelect').each(function(){
+app.service('graph', function() {
 
-for(i=0;i<assets.length;i++){
-if(assets[i].Description==this.value){
-assets[i].percent += percentArray[assetCount]
-$(this).css('color',assets[i].Color)
-percentColor.push(assets[i].Color)
+    var legendColums = 2;
+    var top = -100
+    var radius = 3 / 8;
+    var left = -400;
+    var right = 0;
+
+    if (screen.width > 980) {
+
+        legendColums = 4;
+        top = -60;
+
+        if (screen.height > 750) {
+
+            top = -100;
+        }
 
 
-}
-}
-assetCount += 1;
-})
-//color in percent 
- for(i=0;i<percentColor.length;i++){
- $( ".assetPercent:eq(" + i + " )" ).css( "color", percentColor[i]);
- }
 
-for(i=0;i<assets.length;i++){
-if(assets[i].percent > 0){
-graphData.push({data: [[0,assets[i].percent]], label: assets[i].Description,color: assets[i].Color })
+    } else if (screen.width > 700) {
 
-}}
+        legendColums = 4;
+        top = -40;
+    } else if (screen.width > 660) {
 
-  Flotr.draw(document.getElementById("compositionGraph"),graphData, {
-    HtmlText : true,
-    grid : {
-      verticalLines : false,
-      horizontalLines : false,
-	  outlineWidth:0
-    },
-    xaxis : { showLabels : false },
-    yaxis : { showLabels : false },
-    pie : {
-      show : true
-	 
-    },
-    legend : {
-      show : false
-     
+        legendColums = 3;
+    } else if (screen.width > 400) {
+
+        legendColums = 3;
+        top = 20;
+        left = -350;
+        radius = 3 / 4;
+
+        if (screen.height < 800) {
+            legendColums = 4;
+            top = -300;
+            left = -500;
+
+            radius = 1 / 16;
+
+
+
+        }
+
     }
-  });
-  
-//set cookie that contains asset object update.  Located in assets.js 
+    if (screen.height < 500) {
+
+        top = -30;
+    }
+
+
+    this.test = function() {
+
+    };
+
+    this.element = $('#plotDiv');
+
+    this.data = [];
+    this.options = {
+
+        series: {
+            pie: {
+                show: true,
+                radius: radius,
+                label: {
+                    show: false
+
+                },
+                offset: {
+                    left: left,
+                    right: right,
+                    top: top
+
+
+                }
+            }
+        },
+        legend: {
+            noColumns: legendColums,
+            container: '#chartLegend'
+        }
+
+    };
+
+
+    this.plot = function(element, data, options) {
+
+        $.plot(element, data, options);
+    }
 
 
 
-src = JSON.stringify(assets);
-$.cookie("assets", src);
-temp = $.cookie("assets");
-nobj = $.secureEvalJSON(temp);
-
-
-
-}
+});

@@ -11,6 +11,7 @@ $dataArray[0] = DB::table('etfreturns')->lists('date');
 foreach ($_POST["objSymbol"] as $value){
 $temp = preg_replace('#[^A-Za-z0-9]#i','', $value);
 $dataArray[$counter]= DB::table('etfreturns')->lists($temp); 
+//$dataArray[$counter]=$temp;
 $counter ++;
 }
 return $dataArray;
