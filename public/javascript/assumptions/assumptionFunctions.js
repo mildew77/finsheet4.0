@@ -70,7 +70,7 @@ x = (dataArray[i][0]/dataArray[i][arrayLength-1]);
 z=(1/((arrayLength - 1)/12))
 y= Math.pow(x, z);
 /* ^(1/((arrayLength - 1)/12)) */
-resultArray.push(y-1);
+resultArray.push((y-1)*100);
 }
 return resultArray;
 }
@@ -87,6 +87,8 @@ temp[y]=dataArray[i][y-1]/dataArray[i][y]-1;
 }
 monthly = standardDeviation(temp)
 annual =Math.sqrt(12)*monthly;
+//Made this to show as 05 rather than .05 
+annual = annual *100;
 resultArray.push(annual)
 
 }

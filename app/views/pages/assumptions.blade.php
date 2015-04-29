@@ -20,9 +20,9 @@ Returns
      <tbody>
     <tr ng-repeat="assets in assets" ng-if="assets.Percent>0">
     <td><% assets.Description %></td>
-     <td class="text-center"><% assets.Percent | number:2 %> %</td>
-     <td data-ng-model="asset.average" class="text-center"><% assets.average*100 | number:2 %> %</td>
-   	  <td data-ng-model="asset.stdev" class="text-center"><% assets.stdev*100 | number:2 %> %</td>
+     <td class="text-center"><div  data-ng-model="assets.Percent"percent-input ></div> </td>
+     <td class="text-center"><div  data-ng-model="assets.average"percent-input ></div></td>
+   	  <td class="text-center"><div  data-ng-model="assets.stdev"percent-input ></div></td>
   </tr>
     </tbody>
   </table>
@@ -39,5 +39,6 @@ Correlations
 @stop
 @section('scripts')
 {{HTML::script('javascript/assumptions/assumptionFunctions.js')}}
+{{HTML::script('javascript/assumptions/percentInput.js')}}
 
 @stop

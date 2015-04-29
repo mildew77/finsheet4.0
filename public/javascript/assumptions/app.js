@@ -8,10 +8,11 @@ app.config(function($interpolateProvider) {
 .controller('MainCtrl', function($scope,$cookies,assumption,$timeout) {
    
 
-   $scope.assets =  JSON.parse($cookies.assets);
+   $scope.assets =  JSON.parse($cookies.assets) || global_assets;
    for (var i = 0; i < $scope.assets.length; i++) {
        $scope.assets[i].average="";
        $scope.assets[i].stdev=""
+	   $scope.assets[i].show=true;
    };
 
   $scope.assetsReturns = assumption.getReturnData($scope.assets);
@@ -31,12 +32,14 @@ app.config(function($interpolateProvider) {
 var assetReturns =assumption.customReturn(global_assetsReturns);
 var assetStdev =assumption.customStdev(global_assetsReturns);
 for (var i = 0; i < assetReturns.length; i++) {
-     $scope.assets[i].average = assetReturns[i];
-     $scope.assets[i].stdev = assetStdev[i];
+     $scope.assets[i].average = assetReturns[i].toFixed(2);
+     $scope.assets[i].stdev = assetStdev[i].toFixed(2);
 };
 
 console.log($scope.assets);
     },500)
+	
+	
 $scope.testing = function() {
 
 
