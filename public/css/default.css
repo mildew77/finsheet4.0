@@ -28,7 +28,7 @@ padding:2%;
 display:block;
 margin-top:2%;
 height:80%;
-border-style:solid;
+
  overflow-y: auto;
   overflow-x:auto; 
 }

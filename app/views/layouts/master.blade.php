@@ -15,11 +15,13 @@
 {{HTML::script('javascript/angular.hammer.js')}}
 {{HTML::script('javascript/flot.js')}}
 {{HTML::script('javascript/flotPie.js')}}
+{{HTML::script('javascript/bootstrap.min.js')}}
 <!-- Styles shared throughout application	 -->
 
 {{HTML::style('css/bootstrap.css');}}
 {{HTML::style('css/default.css');}}
 {{HTML::style('css/menu.css');}}
+
 
 
 	@yield('head')
@@ -32,11 +34,11 @@
 	
 	<article>
 	<div id="menu">
-{{ navi::nav([ 'pages/portfolio' => 'Portfolio Composition', 'pages/assumptions' => 'Assumptions','pages/portfolioreturn' => 'Portfolio Return','pages/valueatrisk' => 'Value at Risk','pages/reversemortgage' => 'Reverse Mortgage']) }}
-	@yield('menu')
+<ul><li>Assumptions</li></ul>
+
 	</div>
 	
-	<div id="message"></div>
+
 	<div id="content">
 	@yield('content')
 	</div>
