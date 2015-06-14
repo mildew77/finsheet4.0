@@ -1,4 +1,5 @@
 var global_assetsReturns=[];
+var temp_global_assetsReturns=[];
 
 var global_assets=[{
         'Symbol': 'vfinx',

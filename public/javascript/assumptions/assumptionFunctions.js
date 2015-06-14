@@ -1,3 +1,4 @@
+
 app.service('assumption', function() {
  this.test = function() {
 console.log('working')
@@ -14,6 +15,8 @@ $.ajax({
   data: {objSymbol:objSymbol},
   success: function(data) {
   	global_assetsReturns = trimDataArray(data);
+    temp_global_assetsReturns = global_assetsReturns;
+    
 	},
 	error:function(xhr, status, error){
 	console.log(xhr.responseText)
@@ -198,7 +201,7 @@ firstMMULT.push(mmultPush);
 
 
 for(i=0;i<firstMMULT.length;i++){
-console.log("mmult"+firstMMULT[i]);
+//console.log("mmult"+firstMMULT[i]);
 //console.log("%"+percentList[i]);
 portfolioStDev += firstMMULT[i]*percentList[i];
 //console.log(portfolioStDev);

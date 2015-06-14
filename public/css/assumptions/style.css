@@ -1,12 +1,13 @@
+
 #assumptionCorrelations{
 display:none;
 }
 
-
-
 .error{
 color:red;
 }
+
+select { text-indent: 30%; }
 /* Below can be found at https://css-tricks.com/rotated-table-column-headers/ */
 td.rotate {
   /* Something you can count on */
@@ -30,4 +31,49 @@ td.rotate > div > span {
 }
 .percentageLabel:hover{
 cursor:pointer;
+}
+#calendarOption{
+margin-left: auto;
+    margin-right: auto;
+    width:50%;
+
+}
+#calendar {
+margin-left: auto;
+    margin-right: auto;
+
+}
+#calendar tr{
+ margin-left:5%;
+
+
+}
+#calendar td{
+  cursor:pointer;
+  padding:5%;
+   padding: 10px;
+
+}
+.calendarError{
+padding:1%;
+
+
+}
+.inactive{
+
+  color:#F0F0F5;
+  cursor:default!important;
+}
+
+.timeFrameSelect small{
+
+    background-color:#f5f5f5;
+    word-spacing: 5px;
+   padding: 1%;
+   cursor:pointer;
+
+}
+.modal-header{
+
+  background-color: #2980b9;
 }
